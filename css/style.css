@@ -275,7 +275,7 @@ body {
 
 .contact-item i {
     font-size: 1.3rem;
-    color: var(--primary-color);
+    color: white;
     width: 25px;
     text-align: center;
 }

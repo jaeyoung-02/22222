@@ -48,7 +48,7 @@ function downloadVCard() {
 VERSION:3.0
 FN:하재영
 N:하;재영;;;
-TITLE:Frontend Developer
+<!-- TITLE:Frontend Developer -->
 BDAY:1990-01-01
 TEL;TYPE=CELL:010-4316-2708
 EMAIL:mail@hajaeyoung.kr

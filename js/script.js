@@ -49,7 +49,8 @@ VERSION:3.0
 FN:하재영
 N:하;재영;;;
 TITLE:Frontend Developer
-TEL;TYPE=CELL:010-4316-2708
+BDAY:2002-02-15
+TEL;TYPE=CELL:010-6520-5120
 EMAIL:mail@hajaeyoung.kr
 URL:https://businesscard.hajaeyoung.kr
 NOTE:연락처 저장 감사합니다.

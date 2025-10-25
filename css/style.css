@@ -280,6 +280,10 @@ body {
     text-align: center;
 }
 
+.contact-item:hover i {
+    color: #000000;
+}
+
 .contact-item span {
     font-size: 1rem;
     font-weight: 400;

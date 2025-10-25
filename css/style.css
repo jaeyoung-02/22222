@@ -285,8 +285,8 @@ body {
 }
 
 .social-link img {
-    width: 15px;  /* 이미지 너비 (50px보다 작게) */
-    height: 15px; /* 이미지 높이 */
+    width: 18px;  /* 이미지 너비 (50px보다 작게) */
+    height: 18px; /* 이미지 높이 */
     object-fit: contain; /* 이미지 비율 유지 */
 }
 

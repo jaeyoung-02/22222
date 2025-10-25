@@ -43,36 +43,51 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // vCard 생성 및 다운로드 함수
 function downloadVCard() {
-    // vCard 형식 데이터 생성
+    // vCard 형식 데이터 생성 (이전 답변의 생일 포함)
     const vCardData = `BEGIN:VCARD
 VERSION:3.0
 FN:하재영
 N:하;재영;;;
-<!-- TITLE: 회사명 -->
-BDAY:2002-02-15
-TEL;TYPE=CELL:010-6520-5120
+TITLE:Frontend Developer
+BDAY:1990-01-01
+TEL;TYPE=CELL:010-4316-2708
 EMAIL:mail@hajaeyoung.kr
-URL:https://me.hajaeyoung.kr
+URL:https://businesscard.hajaeyoung.kr
 NOTE:연락처 저장 감사합니다.
 END:VCARD`;
 
-    // Blob 생성
-    const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8' });
-    const url = window.URL.createObjectURL(blob);
-    
-    // 다운로드 링크 생성 및 클릭
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = '하재영_명함.vcf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    
-    // URL 해제
-    window.URL.revokeObjectURL(url);
-    
-    // 사용자 피드백
-    showNotification('명함이 다운로드되었습니다! 📱');
+    // 모바일 기기(안드로이드, iOS)인지 확인
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // 모바일일 경우: Data URI 스킴을 사용하여 연락처 앱을 바로 엽니다.
+        const dataUri = 'data:text/vcard;charset=utf-8,' + encodeURIComponent(vCardData);
+        
+        // window.location.href를 사용해 해당 URI로 이동시킵니다.
+        // 모바일 OS는 'text/vcard' MIME 타입을 인지하고 연락처 앱으로 연결합니다.
+        window.location.href = dataUri;
+
+    } else {
+        // 데스크톱일 경우: 기존 .vcf 파일 다운로드 방식을 유지합니다.
+        const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8' });
+        const url = window.URL.createObjectURL(blob);
+        
+        const link = document.createElement('a');
+        link.href = url;
+        
+        // (이전 답변에서 언급한) 파일 이름 수정
+        link.download = '하재영_명함.vcf'; 
+        
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // URL 해제
+        window.URL.revokeObjectURL(url);
+        
+        // 사용자 피드백
+        showNotification('명함 파일이 다운로드되었습니다! 💻');
+    }
 }
 
 // 알림 메시지 표시 함수

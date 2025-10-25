@@ -192,7 +192,7 @@ body {
 .section-title {
     font-size: 1.3rem;
     font-weight: 600;
-    color: var(--text-dark);
+    color: #000000;
     margin-bottom: 20px;
     text-align: center;
     position: relative;

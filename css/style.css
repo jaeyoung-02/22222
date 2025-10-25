@@ -266,9 +266,9 @@ body {
 }
 
 .contact-item:hover {
-    background: #020202;
-    border-color: var(--primary-color);
-    color: white;
+    background: #ffffff;
+    border-color: #000000;
+    color: #000000;
     transform: translateX(5px);
     box-shadow: var(--shadow-sm);
 }

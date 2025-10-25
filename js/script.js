@@ -46,14 +46,13 @@ function downloadVCard() {
     // vCard 형식 데이터 생성
     const vCardData = `BEGIN:VCARD
 VERSION:3.0
-FN:김민준
-N:김;민준;;;
+FN:하재영
+N:하;재영;;;
 TITLE:Frontend Developer
-TEL;TYPE=CELL:010-1234-5678
-EMAIL:minjun.kim@example.com
-URL:https://github.com/minjun-kim
-URL:https://linkedin.com/in/minjun-kim
-NOTE:사용자 경험을 최우선으로 생각하는 프론트엔드 개발자입니다. React와 Vue.js를 활용하여 현대적이고 반응형인 웹 애플리케이션을 만듭니다.
+TEL;TYPE=CELL:010-4316-2708
+EMAIL:mail@hajaeyoung.kr
+URL:https://businesscard.hajaeyoung.kr
+NOTE:연락처 저장 감사합니다.
 END:VCARD`;
 
     // Blob 생성

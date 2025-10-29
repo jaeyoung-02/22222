@@ -190,6 +190,9 @@ function updateVisitorCount() {
 updateVisitorCount();
 
 // 복사 방지 해제 (사용자 편의를 위해)
+ChannelIO('boot', {
+  "pluginKey": "YOUR_PLUGIN_KEY" // fill your plugin key
+});
 document.addEventListener('copy', function(e) {
     console.log('내용이 복사되었습니다.');
 });
